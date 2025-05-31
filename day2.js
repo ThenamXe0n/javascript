@@ -49,3 +49,15 @@ console.log(`sum of num1 and num2+num3 :${5 + 96 + 8 / 100}`);
 console.log(
   "hello , my name is *your name* and i belog to *your city* city and I am learning *whatever you are learning* i want to become *whatever you want to be*"
 );
+
+
+//=============================big Int==================
+
+// let x = 9999999999999995n /*=  9999999999999999 */
+// let y =4n
+// console.log(x+y)
+
+
+// what is the type of null and undefined
+console.log(typeof(undefined));
+console.log(typeof(null)); //javasript treats everything as an object
