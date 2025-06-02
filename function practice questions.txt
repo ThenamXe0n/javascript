@@ -1,0 +1,62 @@
+03.11 9:55 PM
+Js function practice questions 
+Basic JavaScript Practice Questions
+
+1. INR to USD Converter
+
+Write a function that takes an amount in Indian Rupees (INR) and converts it to US Dollars (USD).
+
+Assume 1 INR = 0.012 USD.
+
+Example: convertINRtoUSD(100) should return 1.2.
+
+
+
+2. Celsius to Fahrenheit Converter
+
+Write a function that converts Celsius to Fahrenheit.
+
+Formula: F = (C × 9/5) + 32
+
+Example: convertCelsiusToFahrenheit(0) should return 32.
+
+
+
+3. Area of a Square
+
+Write a function that takes the length of a square's side and returns its area.
+
+Formula: Area = side × side
+
+Example: areaOfSquare(4) should return 16.
+
+
+
+4. Perimeter of a Rectangle
+
+Write a function that takes the length and width of a rectangle and returns its perimeter.
+
+Formula: Perimeter = 2 × (length + width)
+
+Example: perimeterOfRectangle(5, 10) should return 30.
+
+5. Simple Interest Calculator
+
+Write a function to calculate simple interest.
+
+Formula: SI = (P × R × T) / 100
+
+Example: simpleInterest(1000, 5, 2) should return 100.
+
+6. Calculate the Square of a Number
+
+Write a function that takes a number and returns its square.
+
+Example: squareNumber(5) should return 25.
+
+7. Convert Minutes to Seconds
+
+Write a function that converts minutes into seconds.
+
+Example: convertMinutesToSeconds(5) should return 300.
+
