@@ -1,6 +1,6 @@
 //data types in javascript
 // 1.primitive
-//    -string (charter,letter,name,paragraph)
+//    -string (charter,letter,name,paragraph)✅
 //    -number (integer,decimal,octal,hexadecimal) -NAN(not a number)
 //    -boolean (true/false || 1,0)
 //    -null
@@ -61,3 +61,6 @@ console.log(
 // what is the type of null and undefined
 console.log(typeof(undefined));
 console.log(typeof(null)); //javasript treats everything as an object
+
+let num = "455555"
+console.log(typeof(parseInt(num)))

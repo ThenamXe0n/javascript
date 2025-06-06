@@ -41,3 +41,30 @@ let name = "mindcoder"
 let lastName = "pvt ltd"
 let fullName  = name.concat(lastName,"hello","world")
 console.log(fullName)
+
+// ====================================================
+// day 2
+ let word = "MINDCODERS javascript"
+ //split
+ let url = "home/clothing/mens/tshits"
+ let breadcrumbs = url.split("/")
+console.log(`${breadcrumbs[0]} > ${breadcrumbs[1]} > ${breadcrumbs[2]} >${breadcrumbs[3]}`)
+//  home > clothing > mens > tshirt 
+
+
+ console.log(word.split(" "))
+
+ let n = "two"
+//  slice 
+console.log(word.charAt(11))
+console.log(word.slice(11))
+console.log("mindcoders".length)
+
+let x = " coding /n"
+console.log(x.repeat(4))
+
+console.log("test",word[5])
+console.log("test",word.charAt(5))
+
+
+//strings -----------------end---------------------------``
