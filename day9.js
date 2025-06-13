@@ -113,8 +113,46 @@ function numberGuessGame() {
     }
     if (userNumber > number) {
       alert("hint:try a smaller number");
-    }else {
+    } else {
       alert("hint:try a bigger number");
     }
   }
+}
+
+//create a rock paper sessiors game
+function rockPaperScissors() {
+  let options = ["rock", "paper", "scissors"];
+  let randomIndex = Math.floor(Math.random() * 3);
+  console.log(randomIndex);
+
+  //arrays
+  let computer = options[randomIndex];
+  let user =
+    options[
+      parseInt(prompt("choose a option between rock:0 , paper:1,scissiors:2"))
+    ];
+
+  if (![0,1,2].includes(user)) {
+    return alert("enter valid option");
+  }
+
+  if (user === "paper" && computer === "rock") {
+    return alert(`user win .computer choosed : ${computer}`);
+  }
+  if (user === "rock" && computer === "paper") {
+    return alert(`user lost .computer choosed : ${computer}`);
+  }
+  if (user === "paper" && computer === "scissors") {
+    return alert(`user lost .computer choosed : ${computer}`);
+  }
+  if (user === "scissors" && computer === "paper")
+    return alert(`user win .computer choosed : ${computer}`);
+  if (user === "rock" && computer === "scissors")
+    return alert(`user win .computer choosed : ${computer}`);
+  if (user === "scissors" && computer === "rock")
+    return alert(`user lost .computer choosed : ${computer}`);
+  if (user === "rock" && computer === "rock") return alert("it is a draw");
+  if (user === "scissors" && computer === "scissors")
+    return alert("it is a draw");
+  if (user === "paper" && computer === "paper") return alert("it is a draw");
 }
