@@ -4,7 +4,7 @@ let studentNames = ["sajid","anjali","dheeraj","khushi","kritika","ankita"]
 console.log(studentNames.length)
 
 //find if a item exist in given array (includes) return boolean (true/false)
-let student = "anjali"
+let student = "nameet"
 console.log(`your name :${student} is list studentList  status : ${studentNames.includes(student)} `)
 
 
@@ -21,4 +21,70 @@ console.log(studentNames.toString())
 let word="hello" //olleh
 //reverse is a array method if some how we convert word into array we can use reverse method
 console.log(word.split("").reverse().join(""))
+
+//to add items in a array push(item) is used note : push adds item at the end of array 
+console.log("before",studentNames)
+studentNames.push(student)
+console.log("after",studentNames)
+
+// to remove last items from array pop()
+studentNames.pop()
+console.log(studentNames)
+
+
+//to add items at start position of array unshift()
+studentNames.unshift("sachin","raj")
+console.log(studentNames)
+
+// to remove items from start position of array shift()
+studentNames.shift()
+studentNames.shift()
+studentNames.shift()
+console.log(studentNames)
+
+
+//if i want to add item at a certain position or index or remove item from given postion index
+// splice("index","deleteCount","items to insert")
+
+let games  = ["cricket","football","chess","hockey"]
+//remove football (pos or index : 1) from games array
+//delete football and replace it with khokho
+// games.splice(1,1)
+games.splice(1,0,"khokho","table tennis")
+console.log(games)
+
+
+
+
+
+
+
+
+let numbers = [0,1,2,3,4,5,6,7,8,9,10]
+// let removeItem = 8
+// let index = numbers.indexOf(8)
+// console.log("index of 8",index)
+// console.log(numbers.toSpliced(index,1))
+// console.log(numbers.toSpliced(4,0,5))
+// console.log(numbers)
+
+//toSplice
+
+// splice is used to delete,update and inset items in array on behalf of index no 
+
+//slice method 
+//slice is used to get a part of array
+let sliced = numbers.slice(5,-3)
+console.log(sliced)
+console
+
+console.log([1,2].concat([3,4],[5,6]))//[1,2,3,4,5,6]
+
+// console.log([1,2]+[2,3]+)
+
+let filtered =studentNames.filter(function(student){
+student.includes("a")
+})
+
+console.log(filtered)
 
