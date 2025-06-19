@@ -64,3 +64,40 @@ const people = [
 
 // find how many inventors are born before 1600 and how may total inventors are there in data 
 // same for peoples  J length total peoples
+
+
+
+
+
+let peopleName = people.filter((name)=>{
+return name.toLowerCase().includes("j")
+}) 
+console.log(peopleName)
+console.log(`people with j in their name : ${peopleName.length}`)
+
+
+let inventeroBornBefore1600 =inventors.filter((inventor)=>{
+return inventor.year<1600
+})
+
+console.log("born before 1600",inventeroBornBefore1600)
+console.log("inventors born before 1600 : ",inventeroBornBefore1600.length)
+
+let inventorsWithAInName = inventors.filter((inventor)=>{
+  return inventor.first.toLowerCase().includes("a")
+})
+
+console.log(inventorsWithAInName)
+console.log("inventors with a in their name",inventorsWithAInName.length)
+
+
+let namesOfInventors = inventors.map((i)=>{
+return i.first.concat(" ",i.last)
+})
+
+console.log(namesOfInventors)
+
+let namesOnly = inventorsWithAInName.map((i,idx)=>{
+return i.first.concat(" ",i.last)
+})
+console.log(namesOnly.length , inventors.length)
