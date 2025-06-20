@@ -67,6 +67,41 @@ let checkAllEven = ranks.some((item) => {
   return item % 2 === 0;
 });
 
-console.log(checkAllEven)
+console.log(checkAllEven);
+
+// reduce method in array
+//reduce takes 4 argument in its callback function
+//1. accumulator
+//2.current element
+//3.index(optional)
+//4.array(optional)
+
+let cartItems = [
+  {
+    itemId: 1,
+    product: "black roundnect tshirt",
+    price: 300,
+    discount: 10,
+  },
+  {
+    itemId: 1,
+    product: "blue levis jeans ",
+    price: 700,
+    discount: 20,
+  },
+];
+
+let productPrices = cartItems.map((item)=>{
+  return item.price
+})
 
 
+let totalPrice = productPrices.reduce((acc, curr) => {
+ 
+  return acc + curr;
+});
+
+console.log(totalPrice);
+
+
+console.log([...productPrices,...["a","b","c"]])
