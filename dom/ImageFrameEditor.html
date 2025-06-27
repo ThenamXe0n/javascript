@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>ImageFrame Changer</title>
+  </head>
+  <body>
+    <section id="screen">
+      <h1 id="title">Image viewer</h1>
+      <div id="image-frame">
+        <img
+          id="image"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW9h4fU35Nb2lGTCcT-GS1pVkWd5gqV0yegw&s"
+          alt="poster"
+        />
+      </div>
+
+      <div id="option-container">
+        <label>Image url :</label>
+        <input id="imgInput" type="text" placeholder="enter image url " /> <br />
+        <label>border color :</label>
+        <input id="frameInput" type="color" /> <br />
+        <label>background color : </label>
+        <input id="screenBgInput" type="text" placeholder="enter backround color" /><br />
+        <label>font color : </label>
+        <input id="fontClrInput" type="text" placeholder="enter backround color" />
+
+        <br>
+        <label>change frame size : </label>
+        <input type="range" placeholder="enter width in px" id="frameWidthInput" >
+
+        <br>
+        <label>Frame border radius</label>
+        <input type="range" id="frameRadius">
+      </div>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

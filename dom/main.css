@@ -1,0 +1,31 @@
+#screen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+h1{
+    text-transform: uppercase;
+}
+
+
+#image-frame{
+    height: 250px;
+    width: 450px;
+    padding: 16px;
+    background-color: black;
+    border:1px solid blue;
+    overflow: hidden;
+}
+
+#image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#option-container{
+margin-top: 10px;
+}
