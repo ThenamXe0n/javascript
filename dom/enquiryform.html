@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student enquiry form</title>
+    <style>
+form{
+    border: 1px solid;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    margin-top: 10px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    padding: 13px 0px; 
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <form >
+        <h1 style="text-align: center;">student enquiry Form</h1>
+        <label for="fullName"> student name : </label>
+        <input id="fullName" type="text" placeholder="Enter full Name">
+        <br>
+        <label for="email">Email :</label>
+        <input id="email" type="email" placeholder="enter your mail id" >
+        <br>
+        <label for="mobile">Mobile :</label>
+        <input id="mobile" type="text" maxlength="10" placeholder="enter your mail id" >
+        <br>
+        <label for="message">message : </label>
+        <textarea id="message" rows="10" placeholder="leave a message...."></textarea>
+    <button id="submitBtn">Submit Enquiry</button>
+    </form>
+    <button id="test"> test button</button>
+
+    <script src="./eventsInDom.js"></script>
+</body>
+</html>
