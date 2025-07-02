@@ -317,3 +317,8 @@ let double = num.map((item)=>{
 })
 
 console.log(double)
+
+
+
+
+

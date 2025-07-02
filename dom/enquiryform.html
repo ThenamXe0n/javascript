@@ -1,44 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student enquiry form</title>
     <style>
-form{
-    border: 1px solid;
-    padding:20px;
-    display: flex;
-    flex-direction: column;
-}
-button{
-    margin-top: 10px;
-    background-color: dodgerblue;
-    color: white;
-    border: none;
-    padding: 13px 0px; 
-    font-size: 1rem;
-}
+      form {
+        border: 1px solid;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        max-width: 60vw;
+        margin: auto;
+      }
+      button {
+        margin-top: 10px;
+        background-color: dodgerblue;
+        color: white;
+        border: none;
+        padding: 13px 0px;
+        font-size: 1rem;
+      }
+      #pointer {
+        height: 100px;
+        width: 100px;
+        background-color: orangered;
+        border-radius: 55555px;
+        transform: translate(-50%, -50%);
+      }
+
+      table {
+        max-width: 60vw;
+        width: 60vw;
+        margin: auto;
+        margin-top: 30px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-size: 1.5rem;
+        padding: 6px;
+      }
     </style>
-</head>
-<body>
-    <form >
-        <h1 style="text-align: center;">student enquiry Form</h1>
-        <label for="fullName"> student name : </label>
-        <input id="fullName" type="text" placeholder="Enter full Name">
-        <br>
-        <label for="email">Email :</label>
-        <input id="email" type="email" placeholder="enter your mail id" >
-        <br>
-        <label for="mobile">Mobile :</label>
-        <input id="mobile" type="text" maxlength="10" placeholder="enter your mail id" >
-        <br>
-        <label for="message">message : </label>
-        <textarea id="message" rows="10" placeholder="leave a message...."></textarea>
-    <button id="submitBtn">Submit Enquiry</button>
+  </head>
+  <body style="display: flex;align-items: center; gap:20px">
+    <form>
+      <h1 style="text-align: center">student enquiry Form</h1>
+      <label for="fullName"> student name : </label>
+      <input id="fullName" type="text" placeholder="Enter full Name" />
+      <br />
+      <label for="email">Email :</label>
+      <input id="email" type="email" placeholder="enter your mail id" />
+      <br />
+      <label for="mobile">Mobile :</label>
+      <input
+        id="mobile"
+        type="text"
+        maxlength="10"
+        placeholder="enter your mail id"
+      />
+      <br />
+      <label for="message">message : </label>
+      <textarea
+        id="message"
+        rows="10"
+        placeholder="leave a message...."
+      ></textarea>
+      <button id="submitBtn">Submit Enquiry</button>
     </form>
-    <button id="test"> test button</button>
+
+    <!-- ====================table to show data=================== -->
+    <table id="enquiryTable">
+      <tr>
+        <th>student name</th>
+        <th>email</th>
+        <th>mobile no.</th>
+        <th>message</th>
+      </tr>
+      <tr>
+        <td>sajid</td>
+        <td>sajid@gmail.com</td>
+        <td>989989989</td>
+        <td>I want a leave</td>
+      </tr>
+     <tr></tr>
+    </table>
+
+    <!-- <button id="test">test button</button>
+
+    <div id="pointer"></div> -->
 
     <script src="./eventsInDom.js"></script>
-</body>
+  </body>
 </html>
