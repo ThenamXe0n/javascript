@@ -5,8 +5,11 @@ let message = document.getElementById("message");
 let form = document.querySelector("form");
 let table = document.getElementById("enquiryTable");
 
-function addDetailsToEnquiryTable(event) {
-  event.preventDefault()
+function addDetailsToEnquiryTable(e) {
+  // console.log(event)
+
+  e.preventDefault()
+  
   let studentDetails = {
     name: name.value,
     email: email.value,
@@ -14,6 +17,10 @@ function addDetailsToEnquiryTable(event) {
     message: message.value,
   };
  console.log(studentDetails)
+
+ table.innerHTML+=studentDetails
+
+ localStorage.setItem("studentList",JSON.stringify(studentDetails))
 
 
 
