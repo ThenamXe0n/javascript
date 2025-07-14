@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event deligation</title>
+    <style>
+      div {
+        height: 40vw;
+        width: 40vw;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        background-color: rgb(164, 164, 242);
+      }
+      .box {
+        /* border-radius: 40px; */
+        height: 50px;
+        width: 50px;
+        background-color: rgb(255, 255, 121);
+      }
+      #parent {
+        height: 50%;
+        width: 50%;
+        background-color: aqua;
+      }
+      #child {
+        height: 50%;
+        width: 50%;
+        background-color: rgb(38, 255, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="box-container">
+      <div class="box"></div>
+      <div class="box">box 2</div>
+      <div class="box"></div>
+      <div class="box">box 4</div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box">box 7</div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div> -->
+    <div onclick="grandParentClick()" id="box-container">
+      <div onclick="parentClick()" id="parent">
+        parent
+        <div id="child">child</div>
+      </div>
+    </div>
+    <script>
+      // event delegation
+      //   const boxes = document.querySelectorAll(".box");
+      //   const parent = document.getElementById("box-container");
+
+      //   parent.addEventListener("click", (e) => {
+      //     console.log("clicked", e.target.innerText);
+      //   });
+
+      //   boxes.forEach((item, idx) => {
+      //     item.id = idx;
+      //     item.addEventListener("click", (e) => {
+      //       console.log(`box clicked ${e.target.id}`);
+      //     });
+      //   });
+      document.getElementById("child").addEventListener("click",childClick)
+
+      function grandParentClick() {
+        
+        console.log("grand parent clicked");
+     
+      }
+      function parentClick() {
+        console.log("parent clicked");
+      }
+      function childClick(e) {
+        // e.stopPropagation()
+        console.log("child clicked");
+      }
+    </script>
+  </body>
+</html>

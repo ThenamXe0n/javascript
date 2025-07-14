@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student enquiry form</title>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
     <style>
       form {
         border: 1px solid;
@@ -43,9 +47,62 @@
         font-size: 1.5rem;
         padding: 6px;
       }
+
+      /* ====delete button css start=== */
+      /* From Uiverse.io by vinodjangid07 */
+      #checkbox {
+        display: none;
+      }
+
+      .switch {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(99, 99, 99);
+        border-radius: 50%;
+        z-index: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgb(126, 126, 126);
+        box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
+      }
+      .switch svg {
+        width: 1.2em;
+      }
+      .switch svg path {
+        fill: rgb(48, 48, 48);
+      }
+      #checkbox:checked + .switch {
+        box-shadow: 0px 0px 1px rgb(151, 243, 255) inset,
+          0px 0px 2px rgb(151, 243, 255) inset,
+          0px 0px 10px rgb(151, 243, 255) inset, 0px 0px 40px rgb(151, 243, 255),
+          0px 0px 100px rgb(151, 243, 255), 0px 0px 5px rgb(151, 243, 255);
+        border: 2px solid rgb(255, 255, 255);
+        background-color: rgb(146, 180, 184);
+      }
+      #checkbox:checked + .switch svg {
+        filter: drop-shadow(0px 0px 5px rgb(151, 243, 255));
+      }
+      #checkbox:checked + .switch svg path {
+        fill: rgb(255, 255, 255);
+      }
+
+      /* ====delete button css end= == */
+      .deleteBtn{
+        background-color: red;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 6px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px gray;
+      }
     </style>
   </head>
-  <body style="display: flex;align-items: center; gap:20px">
+  <body style="display: flex; align-items: center; gap: 20px">
     <form>
       <h1 style="text-align: center">student enquiry Form</h1>
       <label for="fullName"> student name : </label>
@@ -72,20 +129,17 @@
     </form>
 
     <!-- ====================table to show data=================== -->
-    <table id="enquiryTable">
-      <tr>
-        <th>student name</th>
-        <th>email</th>
-        <th>mobile no.</th>
-        <th>message</th>
-      </tr>
-      <tr>
-        <td>sajid</td>
-        <td>sajid@gmail.com</td>
-        <td>989989989</td>
-        <td>I want a leave</td>
-      </tr>
-     <tr></tr>
+    <table>
+      <thead>
+        <tr>
+          <th>student name</th>
+          <th>email</th>
+          <th>mobile no.</th>
+          <th>message</th>
+          <th>options</th>
+        </tr>
+      </thead>
+      <tbody id="enquiryTable"></tbody>
     </table>
 
     <!-- <button id="test">test button</button>
