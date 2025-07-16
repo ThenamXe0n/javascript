@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>auto countdown or stop watch</title>
+  </head>
+  <body>
+    <div
+      id="stopWatch"
+      class="border-4 border-black m-4 w-screen min-h-24 flex items-center justify-center text-2xl font-bold bg-black text-green-600"
+    >
+      140s
+    </div>
+    <div class="flex gap-x-6 justify-center">
+      <button id="start" class="bg-black text-white px-4 rounded-md">
+        start
+      </button>
+      <button id="stop" class="bg-red-600 text-white px-4 rounded-md">
+        stop
+      </button>
+    </div>
+    <script>
+      let stopWatch = document.getElementById("stopWatch");
+      let startBtn = document.getElementById("start");
+      let stopBtn = document.getElementById("stop");
+      let countdownInterval;
+      let second = 0;
+      function Counter() {
+        second = second + 1;
+        stopWatch.innerHTML = `${second} s`;
+      }
+
+      function startCounter() {
+        console.log("Started")
+        countdownInterval = setInterval(Counter, 1000);
+      }
+
+      function stopCounter() {
+        console.log("stoped")
+        clearInterval(countdownInterval);
+      }
+
+      startBtn.addEventListener("click", startCounter);
+      stopBtn.addEventListener("click", stopCounter);
+    </script>
+  </body>
+</html>
