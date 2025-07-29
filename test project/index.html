@@ -20,11 +20,15 @@
       <button id="stop" class="bg-red-600 text-white px-4 rounded-md">
         stop
       </button>
+      <button id="reset" class="bg-red-600 text-white px-4 rounded-md">
+        stop
+      </button>
     </div>
     <script>
       let stopWatch = document.getElementById("stopWatch");
       let startBtn = document.getElementById("start");
       let stopBtn = document.getElementById("stop");
+      let resetBtn = document.getElementById("reset");
       let countdownInterval;
       let second = 0;
       function Counter() {
@@ -42,8 +46,17 @@
         clearInterval(countdownInterval);
       }
 
+      function resetCounter(){
+        second = 0
+        stopWatch.innerHTML = `${second} s`
+        stopCounter()
+      }
+
+
+
       startBtn.addEventListener("click", startCounter);
       stopBtn.addEventListener("click", stopCounter);
+      resetBtn.addEventListener("click",resetCounter)
     </script>
   </body>
 </html>

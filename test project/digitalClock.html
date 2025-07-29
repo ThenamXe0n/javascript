@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>digital clock</title>
+    <style>
+      section {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, cyan, navy);
+      }
+      #digitalClock {
+        font-size: 5rem;
+        height: fit-content;
+        max-width: 600px;
+        width: fit-content;
+        border: 10px inset white;
+        padding: 20px 60px;
+        background-color: black;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div id="digitalClock">
+        <span id="hour">05 H</span> : <span id="min">02 M</span> :
+        <span id="sec">02 S</span>
+      </div>
+    </section>
+    <script>
+      //target all the needed elements
+      const HBox = document.getElementById("hour");
+      const MinBox = document.getElementById("min");
+      const SecBox = document.getElementById("sec");
+
+      //to show time we need to store the current time (we can use new Date() to get current time)
+      function getCurrentTime() {
+        let currentTime = new Date();
+        let currentHour = currentTime.getHours();
+        let currentMin = currentTime.getMinutes();
+        let currentSec = currentTime.getSeconds();
+
+        if(currentHour<10){
+            currentHour = `0${currentHour}`
+        }
+        if(currentMin<10){
+            currentMin = `0${currentMin}`
+        }
+        if(currentSec<10){
+            currentSec = `0${currentSec}`
+        }
+
+        HBox.innerHTML = `${currentHour} H`;
+        MinBox.innerHTML = `${currentMin} M`;
+        SecBox.innerHTML = `${currentSec} S`;
+        return currentTime;
+      }
+
+      let clockInterval = setInterval(getCurrentTime,1000)
+
+    </script>
+  </body>
+</html>
