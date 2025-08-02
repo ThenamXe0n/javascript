@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="h-96 border w-52 mx-auto border-black">
+      <div
+        id="inputs"
+        class="w-11/12 bg-gray-300 min-h-12 my-4 mx-auto flex items-center text-2xl p-1 justify-end"
+      ></div>
+      <div
+        id="key_container"
+        class="grid h-[70%] gap-2 p-2 grid-cols-4 grid-rows-5"
+      >
+        <button class="number h-full w-full bg-blue-600/50">1</button>
+        <button class="number h-full w-full bg-blue-600/50">2</button>
+        <button class="number h-full w-full bg-blue-600/50">3</button>
+        <button class="number h-full w-full bg-blue-600/50">4</button>
+        <button class="number h-full w-full bg-blue-600/50">5</button>
+        <button class="number h-full w-full bg-blue-600/50">6</button>
+        <button class="number h-full w-full bg-blue-600/50">7</button>
+        <button class="number h-full w-full bg-blue-600/50 row-span-2">
+          +
+        </button>
+        <button id="eval" class="h-full w-full bg-blue-600/50 row-span-2">
+          =
+        </button>
+        <button id="clear" class="h-full w-full bg-red-600/50 row-span-2">
+          clear
+        </button>
+        <button id="correct" class="h-full w-full bg-red-600/50 row-span-2">
+          ➡️
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let ouputScreen = document.getElementById("inputs");
+      let keyContainer = document.getElementById("key_container");
+
+      function userEntry(e) {
+        e.stopPropagation();
+
+        if (e.target.classList.contains("number")) {
+          console.log(e.target.innerText);
+          let value = e.target.innerText;
+          ouputScreen.innerHTML += value;
+        }
+
+        if (e.target.id === "eval") {
+          ouputScreen.innerHTML = eval(ouputScreen.innerText.toString());
+        }
+        if (e.target.id === "clear") {
+          ouputScreen.innerHTML = "";
+        }
+
+        if (e.target.id === "correct") {
+          let value = ouputScreen.innerHTML;
+          let arrOfValue = value.split("");
+          arrOfValue.pop();
+          let remainingValue = arrOfValue.join("");
+          ouputScreen.innerHTML = remainingValue;
+        }
+      }
+
+      keyContainer.addEventListener("click", userEntry);
+    </script>
+  </body>
+</html>

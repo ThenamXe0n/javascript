@@ -63,6 +63,7 @@ function add(num1, num2) {
 // 3 Anonymous Functions
 // 4 arrow functions
 //5 IIFE(imidiatly invoke function expression)
+()()
 (function () {
   console.log("iife");
 })();
@@ -83,3 +84,16 @@ function b(){
 }
 
 
+let a=()=>"hello"
+
+
+function test(){
+  console.log(test)
+}
+
+Array.filter(test)
+
+parseInt("1234") + 1
+
+
+111.7777 ==> 111.7
