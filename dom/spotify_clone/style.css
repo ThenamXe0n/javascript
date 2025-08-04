@@ -1,0 +1,97 @@
+#root {
+  display: grid;
+  height: 100vh;
+  /* gap: 10px; */
+  overflow: hidden;
+  /* padding: 0px 15px; */
+  width: 100vw;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: 10% 80% 10%;
+  background-color: black;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+#searchBar div#suggestionSection {
+  display: none;
+}
+
+#searchBar input:focus ~ div#suggestionSection {
+  display: block;
+}
+
+main section#song_section {
+  background: linear-gradient(180deg, rgb(6, 79, 94) -87%, #1f1f1f 37%);
+}
+
+#playlist_add_Menu:checked + svg {
+  transform: rotate(45deg);
+}
+
+#playlist_add_Menu:checked + svg + div#list_modal {
+  display: block;
+}
+
+#play_btn:checked + svg + svg#pause_btn {
+    display: block;
+}
+#play_btn:checked + svg {
+    display: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #0e7dc2;
+  height: 5px;
+  border-radius: 5px;
+}
+input[type="range"]::-moz-range-track {
+  background-color: #d30b0b;
+  height: 5px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  /* -webkit-appearance: none; remove default styling */
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  cursor: pointer;
+  margin-top: -7px; /* Adjust to align with track */
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  cursor: pointer;
+}
+
+
+.btn{
+    padding: 5px 16px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(111, 111, 111, 0.507);
+}
+.active{
+    background-color: white;
+    color: black;
+}
+
+
+
+
+/* =====================full screen========================= */
+#full_screen:checked ~ div#song_side_poster{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
