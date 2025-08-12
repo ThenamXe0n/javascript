@@ -70,7 +70,7 @@ const indianSongs = [
   //   album: "Metro... In Dino",
   // },
 ];
-let songNo = 0;
+let songNo = localStorage.getItem("currentSongIndex") ?? 0;
 let currentSong = indianSongs[songNo];
 
 //element declearation
@@ -84,6 +84,9 @@ const sidesongSinger = document.getElementById("currentsong_singer");
 const sideheadingname = document.getElementById("uppersongName");
 const songPlayer = document.getElementById("songPlayer");
 const playBtn = document.getElementById("play_btn");
+const nextBtn = document.getElementById("next_btn");
+const prevBtn = document.getElementById("prev_btn");
+let timeline = document.getElementById("time_line_track");
 
 //function declaration
 function handleLoadMainSongs() {
@@ -130,6 +133,7 @@ function loadCurrentSong() {
 
   //loading audio to songPlayer
   songPlayer.innerHTML = `<source src=${currentSong.url} type="audio/mp3">`;
+  timeline;
 }
 
 loadCurrentSong();
@@ -137,6 +141,7 @@ loadCurrentSong();
 function handleplaysong(e) {
   if (e.target.checked) {
     songPlayer.play();
+    setInterval(handleTimeline, 1000);
   } else {
     songPlayer.pause();
   }
@@ -145,12 +150,42 @@ function handleplaysong(e) {
 function handleplaynextsong() {
   songPlayer.pause();
   songPlayer.innerHTML = "";
-  let nextSongIndex = songNo + 1;
-  currentSong = indianSongs[nextSongIndex];
-  loadCurrentSong();
-  songPlayer.play();
-  console.log(currentSong);
-  console.log(songPlayer.innerHTML);
+
+  let nextSongIndex;
+  if (songNo < indianSongs.length - 1) {
+    nextSongIndex = parseInt(songNo) + 1;
+  } else {
+    nextSongIndex = 0;
+  }
+  localStorage.setItem("currentSongIndex", nextSongIndex);
+  window.location.reload();
+}
+function handleplayprevsong() {
+  songPlayer.pause();
+  songPlayer.innerHTML = "";
+
+  let nextSongIndex;
+  if (songNo > 0) {
+    nextSongIndex = parseInt(songNo) - 1;
+  } else {
+    nextSongIndex = indianSongs.length - 1;
+  }
+  localStorage.setItem("currentSongIndex", nextSongIndex);
+  window.location.reload();
+}
+
+function handleTimeline() {
+  timeline.value = (songPlayer.currentTime / songPlayer.duration) * 100;
+}
+
+function handleControllSongTrack() {
+  let songTime = (songPlayer.duration * timeline.value) / 100;
+  timeline.value = songTime;
+  songPlayer.currentTime = songTime;
+
 }
 
 playBtn.addEventListener("change", handleplaysong);
+nextBtn.addEventListener("click", handleplaynextsong);
+prevBtn.addEventListener("click", handleplayprevsong);
+timeline.addEventListener("input", handleControllSongTrack);
